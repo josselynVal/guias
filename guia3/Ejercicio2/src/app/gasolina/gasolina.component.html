@@ -1,0 +1,49 @@
+<!--<p>gasolina works!</p>-->
+<div class="header">
+<h1>Calculo de combustible</h1>
+<p>Ingrese cantidad en galones que necesita (Mayor a 0.05 G)</p>
+</div>
+<br>
+<label>Cantidad</label>
+<input type="text" [(ngModel)]="valorcm">
+<br>
+<br>
+<label>Tipo de Combustible</label>
+<select [(ngModel)]="opcionSeleccionado" (change)="capturar()">
+<option value="Selecciona">Selecciona</option>
+<option *ngFor="let u of unidades" value="{{u}}" >
+{{u}}
+</option>
+</select>
+<br>
+<br>
+<br>
+<label [hidden]="opcionSeleccionado == 'Selecciona'">Para {{ valorcm }} galones de combistible {{ opcionSeleccionado }} su total a pagar es: <h4>${{valorconversion}}</h4></label>
+
+<!--<div class="header">
+<h1>Calculo de combustible</h1>
+<p>Ingrese cantidad en galones que necesita (Mayor a 0.05 G)</p>
+</div>
+<label>Cantidad</label>
+<input type="text" [(ngModel)]="nombre">
+<label>Tipo</label>
+<input type="text" [(ngModel)]="edad">
+<button class="button" (click)="ingresar()">Ingresar</button>
+<br/><br/>
+<table [hidden]="contador == 0">
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Edad</th>
+<th>Mayor de Edad</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let talumno of registro">
+<td>{{talumno.nombre}}</td>
+<td>{{talumno.edad}}</td>
+<td>{{talumno.mayor}}</td>
+</tr>
+</tbody>
+</table>
+-->

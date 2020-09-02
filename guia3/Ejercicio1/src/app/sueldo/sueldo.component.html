@@ -1,0 +1,36 @@
+<!--<p>sueldo works!</p>-->
+<div class="header">
+<h1>Calculo de descuentos</h1>
+<p>Ingrese Salario</p>
+</div>
+<label>Nombre:</label>
+<input type="text" [(ngModel)]="nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required/>
+<label>Sueldo</label>
+<input type="number" [(ngModel)]="edad" >
+<button class="button" (click)="ingresar()">Calcular sueldo final</button>
+<br/><br/><br>
+<br>
+<h3>
+<table [hidden]="contador == 0" border="5">
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Sueldo</th>
+<th>Descuento ISS</th>
+<th>Descuento Renta</th>
+<th>Descuento AFP</th>
+<th>Sueldo Final</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let talumno of registro">
+<td>{{talumno.nombre}}</td>
+<td>{{talumno.edad}}</td>
+<td>{{talumno.ISS}}</td>
+<td>{{talumno.RENTA}}</td>
+<td>{{talumno.AFP}}</td>
+<td>{{talumno.sueldofinal}}</td>
+</tr>
+</tbody>
+</table>
+</h3>
